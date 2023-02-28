@@ -12,15 +12,21 @@ function gameSTART(event) {
 
     const computerNumber = Math.ceil(Math.random() * rangeNumber_val);
 
-    resultScore.innerText = `You chose: ${myNumber_val}, computer chose: ${computerNumber}`;
-
-    if (computerNumber < myNumber_val) {
+    if (rangeNumber_val < 0) {
+        alert("Please enter positive number");
+        resultScore.innerText = "No count";
+        resultText.innerText = "Retry";
+    } else if (computerNumber < myNumber_val) {
+        resultScore.innerText = `You chose: ${myNumber_val}, computer chose: ${computerNumber}`;
         resultText.innerText = "You won! 💰"
     } else if (computerNumber >  myNumber_val) {
+        resultScore.innerText = `You chose: ${myNumber_val}, computer chose: ${computerNumber}`;
         resultText.innerText = "You lost! 💸"
     } else if (computerNumber ==  myNumber_val) {
+        resultScore.innerText = `You chose: ${myNumber_val}, computer chose: ${computerNumber}`;
         resultText.innerText = "Draw! 🎲"
     }
-} 
+}
+
 
 playButton.addEventListener("click", gameSTART);
