@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="kr">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="w_style.css">
+        <title> Ready action 🎬 </title>
+    </head>
+    <body>
+        <audio autoplay controls loop>
+            <source src="img/music.mp3" type="audio/mp3">
+        </audio>
+        <h2 id="clock">00:00:00</h2>
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
+        <h3> "계속 뭔가를 찾고 있는 듯한 기분이 든다면..." </h3>
+        <form class="hide" id="login-form">
+            <input
+            required
+            maxlength="10"
+            placeholder="너의 이름은......"/>
+        </form>
+
+        <h1 class="hide" id="greeting"></h1>
+        <form id="todo-form">
+            <input type="text" placeholder="잊고 싶지 않은 것, 잊으면 안되는 것을 적어주세요." required />
+        </form>
+        <ul id="todo-list"></ul>
+
+        <script src="w_clock.js"></script>
+        <script src="w_background.js"></script>
+        <script src="w_greeting.js"></script>
+        <script src="w_todo.js"></script>
+        <script src="w_weather.js"></script>
+    </body>
+</html>
