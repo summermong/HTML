@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title> 하몽네컷 </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="photos">
+                <div 
+                id="img1" 
+                class="photo-frame"
+                onmouseover="showText(1)"
+                onmouseout="hideText(1)"
+                onclick="alertText(1)">
+                    <span id="des1" class="photo-description"> 
+                        첫번째 추억
+                    </span>
+                </div>
+                <div id="img2" 
+                class="photo-frame"
+                onmouseover="showText(2)"
+                onmouseout="hideText(2)"
+                onclick="alertText(2)">
+                    <span id="des2" class="photo-description"> 
+                        두번째 추억
+                    </span>
+                </div>
+                <div id="img3" 
+                class="photo-frame"
+                onmouseover="showText(3)"
+                onmouseout="hideText(3)"
+                onclick="alertText(3)">
+                    <span id="des3" class="photo-description"> 
+                        세번째 추억
+                    </span>
+                </div>
+                <div id="img4"
+                class="photo-frame"
+                onmouseover="showText(4)"
+                onmouseout="hideText(4)"
+                onclick="alertText(4)">
+                    <span id="des4" class="photo-description"> 
+                        네번째 추억
+                    </span>
+                </div>
+            </div>
+            <div class="footer">
+                <p class="f-title"> 💜 윤영석 강릉여행 💜 </p>
+                <p class="f-date"> 2022.12.16 ~ 2022.12.18 </p>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
