@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing your picture!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="color-options">
+        <input type="color" id="color">
+        <div class="color-option" style="background-color: #ea2027;" data-color="#ea2027"></div>
+        <div class="color-option" style="background-color: #ee5a24;" data-color="#ee5a24"></div>
+        <div class="color-option" style="background-color: #f79f1f;" data-color="#f79f1f"></div>
+        <div class="color-option" style="background-color: #ffc312;" data-color="#ffc312"></div>
+        <div class="color-option" style="background-color: #a3cb38;" data-color="#a3cb38"></div>
+        <div class="color-option" style="background-color: #009432;" data-color="#009432"></div>
+        <div class="color-option" style="background-color: #0652dd;" data-color="#0652dd"></div>
+        <div class="color-option" style="background-color: #5758bb;" data-color="#5758bb"></div>
+        <div class="color-option" style="background-color: #ff80d0;" data-color="#ff80d0"></div>
+        <div class="color-option" style="background-color: #ffffff;" data-color="#ffffff"></div>
+        <div class="color-option" style="background-color: #000000;" data-color="#000000"></div>
+    </div>
+    <h2 class="middle"> Drawing your picture!
+        <canvas></canvas>
+    </h2>
+    <div class="btns"> 
+        <span> ✏️ Pencil Width </span>
+        <input id="line-width" type="range" min="1" max="10" value="5" step="0.5">
+        <button id="cap"> 🧢 Change Cap </button>
+        <button id="mode-btn"> 💧 Fill </button>
+        <button id="destroy-btn"> ✨ Destroy </button>
+        <button id="eraser-btn"> 🧽 Erase </button>
+        <label for="file"> 🖼️ Add Photo <input type="file" accept="image/*" id="file"> </label>
+        <input type="text" placeholder="Add text here :) " id="text">
+        <button id="save"> 💾 Save image </button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
