@@ -1,47 +1,199 @@
+@font-face {
+  font-family: "NeoDunggeunmoPro-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "NeoDunggeunmoPro-Regular";
+}
+
+html,
 body {
+  height: 100%;
+  background-color: #8b00ff;
+  display: flex; /* 추가 */
+  justify-content: center; /* 추가 */
+}
+
+.start {
+  width: 700px;
+  height: 700px;
+  display: flex; /* 잠깐 꺼둘게 */
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0.05rem 0.05rem 0.05rem black;
+  align-items: center;
+}
+
+.title {
+  font-size: 50px;
+  margin-top: 140px;
+}
+
+.rsp {
+  display: flex;
+}
+
+.rsp img {
+  width: 150px;
+  height: 150px;
+  margin-top: 70px;
+}
+
+.desc {
+  line-height: 40px;
+  font-size: 20px;
+  margin-top: 70px;
+}
+
+.playbtn {
+  width: 100px;
+  height: 40px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 30px;
   background-color: #8b00ff;
   color: white;
-  display: flex;
+  font-size: 20px;
+}
+
+.playbtn:hover {
+  transform: scale(1.2);
+}
+
+.ing {
+  width: 700px;
+  height: 700px;
+  display: none;
   flex-direction: column;
-  justify-content: center;
+  margin-top: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0.05rem 0.05rem 0.05rem black;
+}
+
+.score {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+.score h2 {
+  font-size: 25px;
 }
 
-.choice {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
+.score p {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.result {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
 }
 
 .btns {
   display: flex;
-  column-gap: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  justify-content: center;
+  padding-top: 40px;
 }
 
-button {
-  width: 70px;
-  height: 70px;
+.btns button {
+  width: 80px;
+  height: 80px;
+  font-size: 20px;
   border: none;
-  border-radius: 50px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 40px;
+  border-radius: 40px;
+  margin: 5px;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.61);
 }
 
-.red {
+.btns button:hover {
+  transform: scale(1.1);
+}
+
+.redbtn {
   background-color: #ff00ad;
 }
 
-.blue {
+.bluebtn {
   background-color: #0069ff;
 }
 
-.green {
+.greenbtn {
   background-color: #00ff39;
+}
+
+.choose {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 50px;
+}
+
+.endgame {
+  width: 350px;
+  height: 350px;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  align-items: center;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+}
+
+.enddesc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.end h2 {
+  font-size: 30px;
+  color: #0069ff;
+}
+
+.end h3 {
+  margin-top: 20px;
+}
+
+.endbtn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.endbtn :hover {
+  transform: scale(1.2);
+}
+
+.closebtn,
+.sharebtn {
+  margin-top: 35px;
+  background-color: #00ff39;
+  border: none;
+  border-radius: 50px;
+  width: 80px;
+  height: 30px;
 }

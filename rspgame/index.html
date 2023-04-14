@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./img/game_gamepad_1486.ico" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/game_gamepad_1486.ico" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Rock Scissors Paper!</title>
   </head>
   <body>
-    <div class="container">
-      <div class="choice">
-        <h3>컴퓨터의 선택 :</h3>
-        <p class="computer-choice">?</p>
-      </div>
-      <div class="choice">
-        <h3>당신의 선택 :</h3>
-        <p class="user-choice">?</p>
-      </div>
+    <div class="start">
+        <div class="title">
+            컴퓨터와 가위바위보!
+        </div>
+        <div class="rsp">
+            <img src="./img/paper.png">
+            <img src="./img/rock.png">
+            <img src="./img/scissors.png">
+        </div>
+        <div class="desc">
+            컴퓨터와 가위바위보를 해보세요. <p>
+            5점을 먼저 얻은 쪽이 승리합니다. 
+        </div>
+        <button class="playbtn"> Play </button>
     </div>
 
-    <div class="btns">
-      <button class="red">✌🏻</button>
-      <button class="blue">✊🏻</button>
-      <button class="green">🖐🏻</button>
+    <div class="ing">
+        <div class="score">
+            <div class="user-score">
+                <h2> You </h2>
+                <p> 0 </p>
+            </div>
+            <div class="computer-score">
+                <h2> Computer</h2>
+                <p> 0 </p>
+            </div>
+        </div>
+        <div class="btns">
+            <button class="redbtn"> 가위 </button>
+            <button class="bluebtn"> 바위 </button>
+            <button class="greenbtn"> 보 </button>
+        </div>
+        <div class="result">
+            버튼을 눌러주세요!
+        </div>
+        <div class="choose">
+            <div class="user-choose">
+            </div>
+            <div class="computer-choose">
+            </div>
+        </div>
     </div>
 
-    <div class="result">결과는!</div>
-
-    <script src="app.js"></script>
-  </body>
+    <div class="endgame">
+        <div class="end">
+            <div class="enddesc">
+                <h2> 게임 종료 </h2>
+                <h3> 승리한 내용 </h3>
+            </div>
+            <div class="endbtn">
+                <button class="closebtn"> 다시하기 </button>
+                <button class="sharebtn"> 공유하기 </button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</head>
+<body>
+    
+</body>
 </html>
+

@@ -1,68 +1,99 @@
-/*누를 버튼*/
-const btnRED = document.querySelector(".red");
-const btnBLUE = document.querySelector(".blue");
-const btnGREEN = document.querySelector(".green");
+const playbtn = document.querySelector(".playbtn");
+const start = document.querySelector(".start");
+const ing = document.querySelector(".ing");
 
-/*결과 반영*/
-const userChoice = document.querySelector(".user-choice");
-const computerChoice = document.querySelector(".computer-choice");
+const redbtn = document.querySelector(".redbtn");
+const bluebtn = document.querySelector(".bluebtn");
+const greenbtn = document.querySelector(".greenbtn");
+
+const computerList = ["scissors", "rock", "paper"];
+
+const userChoose = document.querySelector(".user-choose");
+const computerChoose = document.querySelector(".computer-choose");
 const result = document.querySelector(".result");
 
-const computerList = ["가위✌🏻", "바위✊🏻", "보🖐🏻"];
+const userScore = document.querySelector(".user-score p");
+const computerScore = document.querySelector(".computer-score p");
 
-/* 컴퓨터가 선택한 값을 반환하는 함수 */
-function getComputerChoice() {
-  return computerList[Math.floor(Math.random() * computerList.length)];
+const endgame = document.querySelector(".endgame");
+const closebtn = document.querySelector(".closebtn");
+const sharebtn = document.querySelector(".sharebtn");
+const endment = document.querySelector(".end h3");
+
+/* 이미지 경로 */
+const imageList = {
+  scissors: "<img src='./img/scissors.png'>",
+  rock: "<img src='./img/rock.png'>",
+  paper: "<img src='./img/paper.png'>",
+};
+
+/* 게임 시작*/
+function gameStart() {
+  start.style.display = "none";
+  ing.style.display = "flex";
 }
 
-/* 결과를 결정하는 함수 */
-function decideWinner(user, computer) {
-  if (user === computer) {
-    return "비겼어요!";
+playbtn.addEventListener("click", gameStart);
+
+/* 가위바위보 */
+function play(userChoice) {
+  const computerChoice =
+    computerList[Math.floor(Math.random() * computerList.length)];
+  const computerChoice2 = computerList.indexOf(computerChoice);
+
+  userChoose.innerHTML = imageList[userChoice];
+  computerChoose.innerHTML = imageList[computerList[computerChoice2]];
+
+  if (computerChoice === userChoice) {
+    result.innerText = "비겼어요!";
   } else if (
-    (user === computerList[0] && computer === computerList[1]) ||
-    (user === computerList[1] && computer === computerList[2]) ||
-    (user === computerList[2] && computer === computerList[0])
+    (computerChoice === "scissors" && userChoice === "rock") ||
+    (computerChoice === "rock" && userChoice === "paper") ||
+    (computerChoice === "paper" && userChoice === "scissors")
   ) {
-    return "졌어요!";
+    result.innerText = "이겼어요!";
+    userScore.textContent = parseInt(userScore.textContent) + 1;
   } else {
-    return "이겼어요!";
+    result.innerText = "졌어요!";
+    computerScore.textContent = parseInt(computerScore.textContent) + 1;
+  }
+
+  if (
+    parseInt(userScore.textContent) >= 5 ||
+    parseInt(computerScore.textContent) >= 5
+  ) {
+    endgame.style.display = "flex";
+    saygoodbye();
   }
 }
 
-/* 빨간버튼(가위)를 눌렀을 때*/
-function userRED() {
-  const user = "가위✌🏻";
-  const computer = getComputerChoice();
-  const winner = decideWinner(user, computer);
-
-  userChoice.innerText = user;
-  computerChoice.innerText = computer;
-  result.innerText = winner;
+function saygoodbye() {
+  if (parseInt(userScore.textContent) >= 5) {
+    endment.innerText = "축하합니다! 당신이 승리했어요 🥳";
+  } else {
+    endment.innerText = "아쉽지만 컴퓨터가 승리했어요 🥺";
+  }
 }
 
-/*파란버튼(바위)를 눌렀을 때*/
-function userBLUE() {
-  const user = "바위✊🏻";
-  const computer = getComputerChoice();
-  const winner = decideWinner(user, computer);
-
-  userChoice.innerText = user;
-  computerChoice.innerText = computer;
-  result.innerText = winner;
+function end() {
+  endgame.style.display = "none";
+  setTimeout("location.reload(true)", 1000);
 }
 
-/*초록버튼(보)를 눌렀을 때*/
-function userGREEN() {
-  const user = "보🖐🏻";
-  const computer = getComputerChoice();
-  const winner = decideWinner(user, computer);
+function share() {
+  let url = window.location.href;
 
-  userChoice.innerText = user;
-  computerChoice.innerText = computer;
-  result.innerText = winner;
+  navigator.clipboard.writeText(url).then(() => {
+    alert("URL이 복사되었습니다.");
+  });
+
+  endgame.style.display = "none";
+  setTimeout("location.reload(true)", 1500);
 }
 
-btnRED.addEventListener("click", userRED);
-btnBLUE.addEventListener("click", userBLUE);
-btnGREEN.addEventListener("click", userGREEN);
+redbtn.addEventListener("click", () => play("scissors"));
+bluebtn.addEventListener("click", () => play("rock"));
+greenbtn.addEventListener("click", () => play("paper"));
+
+closebtn.addEventListener("click", end);
+sharebtn.addEventListener("click", share);
