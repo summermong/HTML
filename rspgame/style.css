@@ -6,7 +6,7 @@
   font-style: normal;
 }
 
-@media screen and (max-device-width: 780px) {
+@media screen and (max-device-width: 420px) {
   body {
     scale: 50%;
   }
