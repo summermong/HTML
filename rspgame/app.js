@@ -39,10 +39,9 @@ playbtn.addEventListener("click", gameStart);
 function play(userChoice) {
   const computerChoice =
     computerList[Math.floor(Math.random() * computerList.length)];
-  const computerChoice2 = computerList.indexOf(computerChoice);
 
   userChoose.innerHTML = imageList[userChoice];
-  computerChoose.innerHTML = imageList[computerList[computerChoice2]];
+  computerChoose.innerHTML = imageList[computerChoice];
 
   if (computerChoice === userChoice) {
     result.innerText = "비겼어요!";
@@ -52,15 +51,15 @@ function play(userChoice) {
     (computerChoice === "paper" && userChoice === "scissors")
   ) {
     result.innerText = "이겼어요!";
-    userScore.textContent = parseInt(userScore.textContent) + 1;
+    userScore.innerText = parseInt(userScore.innerText) + 1;
   } else {
     result.innerText = "졌어요!";
-    computerScore.textContent = parseInt(computerScore.textContent) + 1;
+    computerScore.innerText = parseInt(computerScore.innerText) + 1;
   }
 
   if (
-    parseInt(userScore.textContent) >= 5 ||
-    parseInt(computerScore.textContent) >= 5
+    parseInt(userScore.innerText) >= 5 ||
+    parseInt(computerScore.innerText) >= 5
   ) {
     endgame.style.display = "flex";
     saygoodbye();
@@ -68,7 +67,7 @@ function play(userChoice) {
 }
 
 function saygoodbye() {
-  if (parseInt(userScore.textContent) >= 5) {
+  if (parseInt(userScore.innerText) >= 5) {
     endment.innerText = "축하합니다! 당신이 승리했어요 🥳";
   } else {
     endment.innerText = "아쉽지만 컴퓨터가 승리했어요 🥺";
