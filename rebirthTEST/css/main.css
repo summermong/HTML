@@ -1,0 +1,22 @@
+#first {
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "NeoDunggeunmo";
+  width: 80%;
+}
+
+#first p {
+  font-family: "NeoDunggeunmo";
+  font-size: 20px;
+}
+
+#first img {
+  animation: rotateImg 3.5s linear infinite;
+}
+
+@keyframes rotateImg {
+  100% {
+    transform: rotate(360deg);
+  }
+}

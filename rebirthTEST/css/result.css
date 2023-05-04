@@ -1,0 +1,30 @@
+#result {
+  display: none;
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "NeoDunggeunmo";
+  width: 80%;
+}
+
+.showImg {
+  width: 200px;
+  padding-top: 30px;
+}
+
+.resultDesc {
+  font-size: 14px;
+}
+
+.resultGood {
+  font-size: 14px;
+}
+
+.resultBad {
+  font-size: 14px;
+}
+
+.match {
+  display: flex;
+  justify-content: space-around;
+}

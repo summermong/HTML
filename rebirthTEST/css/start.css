@@ -1,0 +1,39 @@
+#qna {
+  display: none;
+}
+
+.questionBox {
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "NeoDunggeunmo";
+  width: 80%;
+  font-size: 17px;
+}
+
+.answerBox {
+  margin-top: 20px;
+}
+
+.answerList {
+  background-color: white;
+  width: 80%;
+  display: block;
+  border: 0px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.status {
+  background-color: white;
+  height: 10px;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.statusBar {
+  background-color: orange;
+  height: 10px;
+  border-radius: 20px;
+}
