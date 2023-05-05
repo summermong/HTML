@@ -3,6 +3,11 @@ const qna = document.querySelector("#qna");
 const result = document.querySelector("#result");
 const endPoint = 11;
 
+let ei = 0;
+let ns = 0;
+let ft = 0;
+let pj = 0;
+
 function showResult() {
   qna.style.display = "none";
   result.style.display = "block";
@@ -32,7 +37,8 @@ function showResult() {
   resultBad.innerHTML = infoList[0].bad;
 }
 
-function answerAdd(answerText, qNum, i) {
+// 답변 개수 구현
+function answerAdd(answerText, qNum, aNum) {
   let a = document.querySelector(".answerBox");
   let answer = document.createElement("button");
   a.appendChild(answer);
@@ -55,6 +61,7 @@ function answerAdd(answerText, qNum, i) {
   });
 }
 
+// 질문 & 진행 상태 바 구현
 function questionAdd(qNum) {
   if (qNum > endPoint) {
     showResult();
@@ -71,6 +78,7 @@ function questionAdd(qNum) {
   statusBar.style.width = (100 / endPoint) * qNum + "%";
 }
 
+// 테스트 시작
 function start() {
   first.style.display = "none";
   qna.style.display = "block";
