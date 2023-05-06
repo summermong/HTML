@@ -12,17 +12,19 @@
 }
 
 .answerBox {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
 }
 
-.answerList {
+.answer {
   background-color: white;
   width: 80%;
   display: block;
   border: 0px;
   border-radius: 20px;
   font-size: 14px;
-  margin-top: 10px;
+  text-align: center;
 }
 
 .status {
@@ -36,4 +38,5 @@
   background-color: orange;
   height: 10px;
   border-radius: 20px;
+  width: 0px;
 }

@@ -1,30 +1,37 @@
-#result {
+#Showresult {
   display: none;
   background-color: white;
   border-radius: 20px;
   text-align: center;
   font-family: "NeoDunggeunmo";
   width: 80%;
+  font-size: 17px;
 }
 
-.showImg {
-  width: 200px;
-  padding-top: 30px;
+.resultName {
+  font-size: 18px;
 }
 
-.resultDesc {
-  font-size: 14px;
-}
-
-.resultGood {
-  font-size: 14px;
-}
-
-.resultBad {
+.resultDesc,
+.resultLike,
+.resultHate {
   font-size: 14px;
 }
 
 .match {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.resultGood,
+.resultBad {
+  font-size: 14px;
+}
+
+.sharebtn {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 10px;
+  padding-top: 30px;
 }

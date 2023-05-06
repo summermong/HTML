@@ -1,87 +1,127 @@
 const first = document.querySelector("#first");
 const qna = document.querySelector("#qna");
-const result = document.querySelector("#result");
-const endPoint = 11;
-
-let ei = 0;
-let ns = 0;
-let ft = 0;
-let pj = 0;
-
-function showResult() {
-  qna.style.display = "none";
-  result.style.display = "block";
-
-  let resultName = document.querySelector(".resultName");
-  resultName.innerHTML = infoList[0].name;
-
-  let showImg = document.createElement("img");
-  let resultImg = document.querySelector(".resultImg");
-  showImg.src = "./img/enfp.jpeg";
-  showImg.style.width = "150px";
-  resultImg.appendChild(showImg);
-
-  let resultDesc = document.querySelector(".resultDesc");
-  resultDesc.innerHTML = infoList[0].desc;
-
-  let resultLike = document.querySelector(".resultLike");
-  resultLike.innerHTML = infoList[0].like;
-
-  let resultHate = document.querySelector(".resultHate");
-  resultHate.innerHTML = infoList[0].hate;
-
-  let resultGood = document.querySelector(".resultGood");
-  resultGood.innerHTML = infoList[0].good;
-
-  let resultBad = document.querySelector(".resultBad");
-  resultBad.innerHTML = infoList[0].bad;
-}
-
-// 답변 개수 구현
-function answerAdd(answerText, qNum, aNum) {
-  let a = document.querySelector(".answerBox");
-  let answer = document.createElement("button");
-  a.appendChild(answer);
-
-  answer.classList.add("answerList");
-  answer.classList.add("my-3");
-  answer.classList.add("py-3");
-  answer.classList.add("px-3");
-  answer.classList.add("mx-auto");
-
-  answer.innerHTML = answerText;
-
-  answer.addEventListener("click", function () {
-    let children = document.querySelectorAll(".answerList");
-    for (let i = 0; i < children.length; i++) {
-      children[i].disabled = true;
-      children[i].style.display = "none";
-    }
-    questionAdd(++qNum);
-  });
-}
-
-// 질문 & 진행 상태 바 구현
-function questionAdd(qNum) {
-  if (qNum > endPoint) {
-    showResult();
-    return;
-  }
-
-  let q = document.querySelector(".questionBox");
-  q.innerHTML = qnaList[qNum].q;
-  for (let i in qnaList[qNum].a) {
-    answerAdd(qnaList[qNum].a[i].answer, qNum, i);
-  }
-
-  let statusBar = document.querySelector(".statusBar");
-  statusBar.style.width = (100 / endPoint) * qNum + "%";
-}
+const Showresult = document.querySelector("#Showresult");
 
 // 테스트 시작
 function start() {
   first.style.display = "none";
   qna.style.display = "block";
-  let qNum = 0;
-  questionAdd(qNum);
+
+  q.innerText = qnaList[0].q;
+  answer[0].innerText = qnaList[0].a[0].answer;
+  answer[1].innerText = qnaList[0].a[1].answer;
+}
+
+// 질문 및 답변 구현
+const q = document.querySelector(".questionBox");
+const answer = document.querySelectorAll(".answer");
+let num = 1;
+
+for (let i = 0; i < answer.length; i++) {
+  document
+    .querySelectorAll(".answer")
+    [i].addEventListener("click", function () {
+      if (num !== qnaList.length) {
+        q.innerText = qnaList[num].q;
+        answer[0].innerText = qnaList[num].a[0].answer;
+        answer[1].innerText = qnaList[num].a[1].answer;
+        num++;
+      }
+      plusStatusBar();
+      calScore(i);
+      console.log(num);
+    });
+}
+
+// 진행바 구현
+function plusStatusBar() {
+  let statusBar = document.querySelector(".statusBar");
+  statusBar.style.width = (100 / qnaList.length) * num + "%";
+}
+
+// 점수 계산
+let question = 1;
+let EI = 0;
+let NS = 0;
+let FT = 0;
+let PJ = 0;
+
+function calScore(ans) {
+  if (question <= 3) {
+    EI = ans == 0 ? ++EI : --EI;
+  } else if (question <= 6) {
+    NS = ans == 0 ? ++NS : --NS;
+  } else if (question <= 9) {
+    FT = ans == 0 ? ++FT : --FT;
+  } else {
+    PJ = ans == 0 ? ++PJ : --PJ;
+  }
+  question++;
+
+  // 문제 수가 qnaList보다 커질 경우 결과 계산
+  if (question > qnaList.length) {
+    calResult(EI, NS, FT, PJ);
+  }
+}
+
+function calResult(EI, NS, FT, PJ) {
+  let result = "";
+
+  if (EI > 0) {
+    result += "E";
+  } else {
+    result += "I";
+  }
+
+  if (NS > 0) {
+    result += "N";
+  } else {
+    result += "S";
+  }
+
+  if (FT > 0) {
+    result += "F";
+  } else {
+    result += "T";
+  }
+
+  if (PJ > 0) {
+    result += "P";
+  } else {
+    result += "J";
+  }
+  showResult(result);
+}
+
+// 결과 화면
+function showResult(result) {
+  qna.style.display = "none";
+  Showresult.style.display = "block";
+
+  let resultName = document.querySelector(".resultName");
+
+  let showImg = document.createElement("img");
+  let resultImg = document.querySelector(".resultImg");
+  resultImg.appendChild(showImg);
+
+  let resultDesc = document.querySelector(".resultDesc");
+  let resultLike = document.querySelector(".resultLike");
+  let resultHate = document.querySelector(".resultHate");
+  let resultGood = document.querySelector(".resultGood");
+  let resultBad = document.querySelector(".resultBad");
+
+  for (let i = 0; i < infoList.length; i++) {
+    if (result === infoList[i].mbti) {
+      showImg.src = `./img/${infoList[i].img_src}`;
+      showImg.style.width = "130px";
+      showImg.alt = `${infoList[i].mbti}`;
+      resultName.innerHTML = infoList[i].name;
+      resultDesc.innerHTML = infoList[i].desc;
+
+      resultLike.innerHTML = infoList[i].like;
+      resultHate.innerHTML = infoList[i].hate;
+      resultGood.innerHTML = infoList[i].good;
+      resultBad.innerHTML = infoList[i].bad;
+    }
+  }
 }
