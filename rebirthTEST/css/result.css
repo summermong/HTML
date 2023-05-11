@@ -4,7 +4,17 @@
   border-radius: 20px;
   text-align: center;
   font-family: "NeoDunggeunmo";
-  width: 80%;
+  width: 330px;
+  font-size: 17px;
+  padding: 20px;
+}
+
+#shareResult {
+  background-color: white;
+  border-radius: 20px;
+  text-align: center;
+  font-family: "NeoDunggeunmo";
+  width: 330px;
   font-size: 17px;
 }
 
@@ -16,6 +26,10 @@
 .resultLike,
 .resultHate {
   font-size: 14px;
+}
+
+.resultDesc {
+  padding: 10px;
 }
 
 .match {
@@ -30,8 +44,7 @@
 
 .sharebtn {
   display: flex;
-  justify-content: space-between;
+  padding-top: 10px;
   gap: 15px;
-  padding-bottom: 10px;
-  padding-top: 30px;
+  justify-content: center;
 }

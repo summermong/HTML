@@ -2,6 +2,20 @@ const first = document.querySelector("#first");
 const qna = document.querySelector("#qna");
 const Showresult = document.querySelector("#Showresult");
 
+// 다시 하기 버튼
+function replay() {
+  setTimeout("location.reload(true)", 800);
+}
+
+// 복사하기 버튼
+function copy() {
+  let nowUrl = window.location.href;
+
+  navigator.clipboard.writeText(nowUrl).then(() => {
+    alert("링크 복사 완료!");
+  });
+}
+
 // 테스트 시작
 function start() {
   first.style.display = "none";
@@ -29,7 +43,6 @@ for (let i = 0; i < answer.length; i++) {
       }
       plusStatusBar();
       calScore(i);
-      console.log(num);
     });
 }
 

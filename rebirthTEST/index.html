@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGFH2VP');</script>
+    <!-- End Google Tag Manager -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVZWSH08HD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QVZWSH08HD');
+  </script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +30,8 @@
     <meta property="og:url" content="https://whatismypreviouslife.netlify.app/" />
     <meta property="og:title" content="전생 테스트" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="img/main.jpeg" />
-    <meta property="og:description" content="나의 전생은 무엇이었을까?" />
+    <meta property="og:image" content="img/main.png" />
+    <meta property="og:description" content="나는 전생에 뭐였을까?" />
 
     <!--favicon-->
     <link rel="shortcut icon" href="./img/favicon.ico">
@@ -42,9 +60,9 @@
     <div class="container">
       <section id="first" class="mx-auto py-5 my-5 px-3">
         <h1 class="mt-2">전생 테스트</h1>
-        <p class="my-5">나는 전생에<br />무엇이었을까?</p>
+        <p class="my-5">나는 전생에<br />뭐였을까?</p>
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-          <img src="./img/main.jpeg" width="130px" alt="메인 이미지" />
+          <img src="./img/main.png" width="130px" alt="메인 이미지" />
         </div>
         <p class="my-5">
           아래 버튼을 눌러 <br />
@@ -85,20 +103,22 @@
             <div class="resultBad pt-3"></div>
           </h3>
         </div>
-        <div class="btn">
           <div class="rebtn">
-            <button type="button" class="btn btn-warning"> 다시 하기
+            <button type="button" class="btn btn-warning" onclick="js:replay()"> 다시 하기
           </div>
           <div class="sharebtn">
-            <div class="kakao"></div>
-            <div class="linkcopy"></div>
+            <div class="kakao">
+              <img src="./img/kakaotalk.png" alt="kakaoShare" width="50px" onclick="js:setShare()">
+            </div>
+            <div class="linkcopy">
+              <img src="./img/linkcopy.png" alt="linkcopy" width="50px" onclick="js:copy()">
+            </div>
           </div>
-          
-        </div>
+       
       </section>
     </div>
     <script src="./js/data.js"></script>
-    <script src="./js/btn.js"></script>
+    <script src="./js/share.js"></script>
     <script src="./js/start.js"></script>
   </body>
 </html>

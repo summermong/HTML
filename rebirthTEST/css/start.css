@@ -7,7 +7,7 @@
   border-radius: 20px;
   text-align: center;
   font-family: "NeoDunggeunmo";
-  width: 80%;
+  width: 330px;
   font-size: 17px;
 }
 
@@ -19,7 +19,7 @@
 
 .answer {
   background-color: white;
-  width: 80%;
+  width: 330px;
   display: block;
   border: 0px;
   border-radius: 20px;
@@ -30,7 +30,7 @@
 .status {
   background-color: white;
   height: 10px;
-  width: 80%;
+  width: 330px;
   border-radius: 20px;
 }
 
