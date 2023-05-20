@@ -1,2 +1,5 @@
 TO_Summermong_FROM_Yoyoo
+**/.DS_STORE
 .DS_STORE
+**/node_modules
+**/.env
