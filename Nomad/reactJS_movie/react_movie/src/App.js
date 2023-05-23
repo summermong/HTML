@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
 function App() {
+  const [change, setChange] = useState(0);
+  const onChange = (event) => {
+    setChange(event.target.value);
+  };
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
   useEffect(() => {
@@ -13,15 +17,25 @@ function App() {
   }, []);
   return (
     <div>
-      <h1>The Coins! ({coins.length}) </h1>
-      {loading ? <strong>Loading...</strong> : null}
-      <ul>
-        {coins.map((coin) => (
-          <li key={coin.id}>
-            {coin.name} ({coin.symbol}): {coin.quotes.USD.price} USD
-          </li>
-        ))}
-      </ul>
+      <h1>The Coins! {loading ? "" : `(${coins.length})`} </h1>
+      <input
+        value={change}
+        id="change"
+        placeholder="change"
+        type="number"
+        onChange={onChange}
+      ></input>
+      {loading ? (
+        <strong>Loading...</strong>
+      ) : (
+        <select>
+          {coins.map((coin) => (
+            <option>
+              {coin.name} ({coin.symbol}): {coin.quotes.USD.price} USD
+            </option>
+          ))}
+        </select>
+      )}
     </div>
   );
 }
