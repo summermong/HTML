@@ -5,74 +5,8 @@
 
 h2 {
   padding-left: 20px;
-}
-
-.slider {
-  position: relative;
-}
-
-.slider__arrow-left {
-  background-clip: content-box;
-  padding: 20px 0;
-  box-sizing: border-box;
-  transition: 400ms all ease-in-out;
-  cursor: pointer;
-  width: 80px;
-  z-index: 1000;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-}
-
-.slider__arrow-right {
-  background-clip: content-box;
-  padding: 20px 0;
-  box-sizing: border-box;
-  transition: 400ms all ease-in-out;
-  cursor: pointer;
-  width: 80px;
-  z-index: 1000;
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-}
-
-.arrow {
-  transition: 400ms all ease-in-out;
-}
-
-.arrow:hover {
-  transition: 400ms all ease-in-out;
-  transform: scale(1.5);
-}
-
-.slider:hover .slider__arrow-left {
-  transition: 400ms all ease-in-out;
-  visibility: visible;
-}
-
-.slider:hover .slider__arrow-right {
-  transition: 400ms all ease-in-out;
-  visibility: visible;
-}
-
-.slider__arrow-left:hover {
-  background: rgba(20, 20, 20, 0.5);
-  transition: 400ms all ease-in-out;
-}
-.slider__arrow-right:hover {
-  background: rgba(20, 20, 20, 0.5);
-  transition: 400ms all ease-in-out;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .row__posters {
@@ -139,4 +73,28 @@ h2 {
   .row__posterLarge {
     max-height: 280px;
   }
+}
+
+.swiper-pagination {
+  text-align: right !important;
+}
+
+.swiper-pagination-bullet {
+  background: gray !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
 }
