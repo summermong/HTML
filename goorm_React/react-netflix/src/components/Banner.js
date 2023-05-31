@@ -33,8 +33,6 @@ export default function Banner() {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   };
 
-  console.log("movie", movie);
-
   if (!isClicked) {
     return (
       <header
@@ -55,11 +53,7 @@ export default function Banner() {
               >
                 Play
               </button>
-            ) : (
-              <button className="banner__button play" disabled={true}>
-                Play
-              </button>
-            )}
+            ) : null}
             <button className="banner__button info">More Information</button>
           </div>
           <h1 className="banner__desc">{truncate(movie.overview, 100)}</h1>
