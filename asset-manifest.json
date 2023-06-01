@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/playground-js/goorm_React/react-netflix/static/css/main.d24f937f.css",
-    "main.js": "/playground-js/goorm_React/react-netflix/static/js/main.d915f94a.js",
+    "main.js": "/playground-js/goorm_React/react-netflix/static/js/main.6132a792.js",
     "static/js/787.20e5b628.chunk.js": "/playground-js/goorm_React/react-netflix/static/js/787.20e5b628.chunk.js",
     "index.html": "/playground-js/goorm_React/react-netflix/index.html",
     "main.d24f937f.css.map": "/playground-js/goorm_React/react-netflix/static/css/main.d24f937f.css.map",
-    "main.d915f94a.js.map": "/playground-js/goorm_React/react-netflix/static/js/main.d915f94a.js.map",
+    "main.6132a792.js.map": "/playground-js/goorm_React/react-netflix/static/js/main.6132a792.js.map",
     "787.20e5b628.chunk.js.map": "/playground-js/goorm_React/react-netflix/static/js/787.20e5b628.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d24f937f.css",
-    "static/js/main.d915f94a.js"
+    "static/js/main.6132a792.js"
   ]
 }
