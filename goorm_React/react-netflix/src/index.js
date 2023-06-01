@@ -8,8 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter
-    basename="/playground-js/goorm_React
-  /react-netflix/
+    basename="/react_netflix/
   "
   >
     <App />
