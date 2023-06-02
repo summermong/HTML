@@ -32,6 +32,8 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
     setMovieSelected(movie); //객체 안에 영화 정보를 넣어줬음
   };
 
+  // console.log(movieSelected);
+
   return (
     <section className="row">
       <h2>{title}</h2> {/* App Row에 있는 title. prop로 받아왔음 */}
@@ -62,7 +64,7 @@ export default function Row({ isLargeRow, title, id, fetchUrl }) {
       >
         <div id={id} className="row__posters">
           {movies.map((movie) => (
-            <SwiperSlide>
+            <SwiperSlide key={movie.id}>
               <img
                 key={movie.id}
                 className={`row__poster ${isLargeRow && "row__posterLarge"}`}
