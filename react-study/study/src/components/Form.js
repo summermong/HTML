@@ -4,13 +4,14 @@ const Form = ({ handleSubmit, value, setValue }) => {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <div>
       <form className="flex justify-between pt-2" onSubmit={handleSubmit}>
         <input
-          className="w-full p-2 mr-4 border-2 rounded shadow"
+          className="p-2 mr-2 border-2 rounded shadow w-full"
           type="text"
-          placeholder="오늘은 무슨 일을 할까요?"
+          placeholder="할 일을 입력하세요"
           value={value}
           onChange={handleChange}
         />

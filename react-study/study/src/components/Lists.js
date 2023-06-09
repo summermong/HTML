@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Lists = ({ todoData, setTodoData }) => {
-  const handleDone = (id) => {
+  const [editingId, setEditingId] = useState(null);
+  const [editedTitle, setEditedTitle] = useState("");
+
+  // 할 일 체크하기
+  const handleDoneChange = (id) => {
     let newTodoData = todoData.map((data) => {
       if (data.id === id) {
         data.done = !data.done;
@@ -11,9 +15,42 @@ const Lists = ({ todoData, setTodoData }) => {
     setTodoData(newTodoData);
   };
 
+  // ❌ 버튼 눌러 할 일 삭제하기
   const handleDelete = (id) => {
     let newTodoData = todoData.filter((data) => data.id !== id);
     setTodoData(newTodoData);
+    localStorage.setItem("todoData", JSON.stringify(newTodoData));
+  };
+
+  // 할 일 수정한 거 반영하기
+  const handleEditChange = (event) => {
+    setEditedTitle(event.target.value);
+  };
+
+  // 수정한 할 일 찾기
+  const handleEditToggle = (id) => {
+    setEditingId(id);
+    const todo = todoData.find((data) => data.id === id);
+    if (todo) {
+      setEditedTitle(todo.title);
+    }
+  };
+
+  // 수정한 할 일 제출하기
+  const handleSubmit = (event, id) => {
+    event.preventDefault();
+    let newTodoData = todoData.map((data) => {
+      if (data.id === id) {
+        return {
+          ...data,
+          title: editedTitle,
+        };
+      }
+      return data;
+    });
+    setTodoData(newTodoData);
+    setEditingId(null);
+    setEditedTitle("");
   };
 
   return (
@@ -25,18 +62,45 @@ const Lists = ({ todoData, setTodoData }) => {
             key={data.id}
           >
             <div className="p-2 mx-2">
-              <input
-                className="mr-2"
-                type="checkbox"
-                defaultChecked={data.done}
-                onChange={() => handleDone(data.id)}
-              />
-              <span className={data.done ? "line-through" : null}>
-                {data.title}
-              </span>
+              {editingId === data.id ? (
+                <form onSubmit={(event) => handleSubmit(event, data.id)}>
+                  <input
+                    className="w-full px-3 p-2 mr-4 text-gray-500 rounded"
+                    onChange={handleEditChange}
+                    value={editedTitle}
+                  />
+                </form>
+              ) : (
+                <>
+                  <input
+                    className="mr-2"
+                    type="checkbox"
+                    defaultChecked={data.done}
+                    onChange={() => handleDoneChange(data.id)}
+                  />
+                  <span className={data.done ? "line-through" : null}>
+                    {data.title}
+                  </span>
+                </>
+              )}
             </div>
             <div>
-              <button className="p-2 mr-2">💬</button>
+              {editingId === data.id ? (
+                <button
+                  className="p-2 mr-2"
+                  onClick={(event) => handleSubmit(event, data.id)}
+                  type="submit"
+                >
+                  💾
+                </button>
+              ) : (
+                <button
+                  className="p-2 mr-2"
+                  onClick={() => handleEditToggle(data.id)}
+                >
+                  💬
+                </button>
+              )}
               <button
                 className="p-2 mr-2"
                 onClick={() => handleDelete(data.id)}
