@@ -1,10 +1,10 @@
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
 const carousel = document.querySelector(".carousel");
+const imgWidth = document.querySelector(".carousel img").width;
 
 let currentSlide = 1;
 const maxSlice = document.querySelectorAll(".carousel div").length;
-const imgWidth = 500;
 
 nextBtn.addEventListener("click", next);
 
