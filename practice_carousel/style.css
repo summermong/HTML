@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+h2 {
+  text-align: center;
+}
+
+.carousel-container {
+  width: 500px;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: all 1s;
+}
+
+.carousel img {
+  border-radius: 10px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-container button {
+  background-color: lavender;
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
