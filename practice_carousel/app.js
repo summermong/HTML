@@ -9,20 +9,13 @@ const maxSlice = document.querySelectorAll(".carousel div").length;
 nextBtn.addEventListener("click", next);
 
 function next() {
-  if (currentSlide >= maxSlice) {
-    currentSlide = 0;
-  }
-  carousel.style.transform = `translateX(-${imgWidth * currentSlide}px)`;
-  currentSlide++;
+  carousel.appendChild(carousel.firstElementChild);
+  carousel.style.transitionDuration = "500ms";
 }
 
 prevBtn.addEventListener("click", prev);
 
 function prev() {
-  if (currentSlide === 1) {
-    currentSlide = maxSlice;
-  } else {
-    currentSlide--;
-  }
-  carousel.style.transform = `translateX(-${imgWidth * (currentSlide - 1)}px)`;
+  carousel.insertBefore(carousel.lastElementChild, carousel.firstElementChild);
+  carousel.style.transitionDuration = "500ms";
 }
