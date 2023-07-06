@@ -98,6 +98,9 @@ const Button = styled.button`
   margin: 10px;
   padding-bottom: 15px;
   font-family: "UhBeemysen";
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const Gif = styled.img`
