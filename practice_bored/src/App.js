@@ -40,10 +40,8 @@ function App() {
       </Title>
       <Container>
         <Gif src={background} alt="심심한 모습" />
-        <Todo> {click ? activity : "I recommend what you do"} </Todo>
-        <Buttons>
-          <Button onClick={handleClick}> {click ? "Again" : "Click"}</Button>
-        </Buttons>
+        <Todo>{click ? activity : "I recommend what you do"}</Todo>
+        <Button onClick={handleClick}>{click ? "Again" : "Click"}</Button>
       </Container>
     </Wrapper>
   );
@@ -80,23 +78,17 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Buttons = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-`;
-
 const Button = styled.button`
   border: none;
   border-radius: 50px;
-  width: 80px;
+  width: 90px;
   height: 40px;
   background-color: #a7ecee;
-  font-size: 26px;
+  font-size: 24px;
   cursor: pointer;
   color: white;
-  margin: 10px;
-  padding-bottom: 15px;
+  margin: 0 auto;
+  padding-bottom: 20px;
   font-family: "UhBeemysen";
   &:hover {
     transform: scale(1.1);
