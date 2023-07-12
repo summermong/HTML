@@ -1,6 +1,6 @@
 {
   "name": "study",
-  "homepage": "https://summermong.github.io/todolist",
+  "homepage": "https://summermong.github.io/react-todolist",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
